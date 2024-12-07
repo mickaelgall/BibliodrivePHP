@@ -2,16 +2,16 @@
   
       <fieldset>
   
-          <legend>Informations personnelles</legend>
+          <legend>ce connecter</legend>
   
           Prénom :<input type="text" id="txtprenom" name="txtprenom"><br><br>
-          Nom : <input type="text" id="txtnom" name="txtnom"><br><br>
+          nom: <input type="text" id="txtnom" name="txtnom"><br><br>
           J'accepte les conditions
             <input type="checkbox" id="accepte" name="accepte">
   
       </fieldset>
   
-      <input type="submit" name="ok" value="Envoyer">
+      <input type="submit" name="ok" value="validé">
   
   </form>
   
