@@ -42,7 +42,7 @@ Appuyer sur la photo dans la barres de navigation pour revenir à l'accueil.
   
   <!-- début haut droit-->
   <div class="col-sm-3">
-    <img src="5d74466cb3d0d5ec36520414efa94fbd.jpg" alt="bibliothèque " width="342" height="200">
+    <img src="bibliotequeminecraft.jpg" alt="bibliothèque " width="342" height="200">
   
   </div>
   <!-- fin haut droit-->
