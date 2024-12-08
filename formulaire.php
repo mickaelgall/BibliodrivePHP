@@ -1,5 +1,4 @@
-<form method="get" action="script.php">
-  
+
       <fieldset>
   
           <legend>ce connecter</legend>
@@ -16,6 +15,8 @@
   </form>
   
     <?php
+    require_once 'connexion.php';
+    $stmt = $connexion->prepare("INSERT INTO tableau (nom, prenom) VALUES (:nom, :prenom)");
     if (isset($_GET["ok"])){
         $prenom=$_GET["txtprenom"];
         $nom=$_GET["txtnom"];
