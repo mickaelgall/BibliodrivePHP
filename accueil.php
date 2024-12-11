@@ -16,12 +16,14 @@
   <?php 
     include 'barre_recherche.php'; 
     ?>
-  <!-- fin haut gauche-->
+  
+<!-- fin haut gauche-->
 
   <!-- début haut droit-->
   <div class="col-sm-3">
-    <img src="bibliotequeminecraft.jpg" alt="bibliothèque " width="342" height="200">
-  
+  <?php 
+    include 'image.php'; 
+    ?>
   </div>
   <!-- fin haut droit-->
   
