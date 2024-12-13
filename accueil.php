@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -41,10 +44,9 @@
   <!-- début bas droit-->
   <div class="col-sm-3">
   <?php 
-    include 'Formulaire.php'; 
+    include 'authentification.php'; 
     ?>
 </div>
    <!-- fin bas droit-->
-
   </body>
 </html>

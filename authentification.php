@@ -9,7 +9,7 @@ if (!isset($_POST['btnSeConnecter'])) { /* L'entrée btnSeConnecter est vide = l
 
     <form action="" method = "post" ">
 
-        Mel: <input name="mel" type="text" size ="30"">
+        Mail: <input name="mel" type="text" size ="30"">
 
         Mot de passe: <input name="motdepasse" type="text" size ="30"">
 
@@ -52,14 +52,13 @@ if (!isset($_POST['btnSeConnecter'])) { /* L'entrée btnSeConnecter est vide = l
     if ($enregistrement) { // si $enregistrement n'est pas vide = on a trouvé quelque chose -> on est connecté
 
         echo '<h1>Connexion réussie, bienvenue !</h1>';
-
+        $_SESSION["utilisateur"] = $enregistrement->mel;
+        echo 'test';
     } else { // La requête n'a pas retournée de résultat, on a pas trouvé de ligne correspondant au mel et mot de passe
-
         echo "Echec à la connexion.";
-
     }
-
 }
 ?>
+
 </body>
 </html>

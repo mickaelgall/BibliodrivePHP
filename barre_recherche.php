@@ -12,7 +12,7 @@ Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
             <li class="nav-item">
               <a class="nav-link" href="http://127.0.0.1/projetPHP/BibliodrivePHP/panier.php">panier<img src="Livre.jpg" alt="bibliothèque " width="35" height="35"></a>
             </li>
-          <form class="d-flex">
+          <form class="d-flex" action="détail_livre" method="post">
             <input class="form-control me-2" type="text" placeholder="chercher un livre">
             <button class="btn btn-primary" type="button">rechercher</button>
           </form>
@@ -20,4 +20,5 @@ Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
       </div>
     </nav>
   </div>
+
   
