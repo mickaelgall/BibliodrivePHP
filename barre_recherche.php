@@ -1,7 +1,6 @@
 Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
     <br> <!--espace de ligne-->
     Le site est en maintenance jusqu'au 6 janvier 2025, merci de votre visite.
-    <h5>vous êtes à l'accueil</h5>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="http://127.0.0.1/projetPHP/BibliodrivePHP/accueil.php">   <img src="table-enchantement-minecraft.jpg" alt="bibliothèque " width="50" height="50"></a>

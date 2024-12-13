@@ -10,13 +10,16 @@
 
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    
+  <div class="carousel-item active"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
    <img src="1984.jpg" alt="george orwell" width="500" height="700">
     </div>
-    <div class="carousel-item">
+    
+    <div class="carousel-item"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <img src="Anna_Karenine.jpg" alt="tolstoi" width="500" height="700">
     </div>
-    <div class="carousel-item">
+   
+    <div class="carousel-item"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <img src="Bartleby_le_Scribe.jpg" alt="herman melville" width="500" height="700">
     </div>
   </div>

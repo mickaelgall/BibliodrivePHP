@@ -33,16 +33,10 @@
   
   <!-- début bas gauche-->
   <div class="col-sm-9">
-  <div class="col-sm-9">
-  <ul class="list-group list-group-flush">
-  <li class="list-group-item">livre 1</li>
-  <li class="list-group-item">livre 2</li>
-  <li class="list-group-item">livre 3</li>
-  <li class="list-group-item">livre 4</li>
-  <li class="list-group-item">livre 5</li>
-</ul>
-</div> 
-  </div> 
+  <?php 
+    include 'détail_livre.php'; 
+    ?>
+  </div>
   <!-- fin bas gauche-->
   
   
