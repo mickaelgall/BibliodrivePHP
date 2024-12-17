@@ -36,7 +36,7 @@ session_start();
   <!-- début bas gauche-->
   <div class="col-sm-9">
   <?php 
-    include 'détail_livre.php'; 
+    include 'detail_livre.php'; 
     ?>
   </div>
   <!-- fin bas gauche-->
