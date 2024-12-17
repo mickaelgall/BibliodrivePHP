@@ -36,7 +36,7 @@ session_start();
   <!-- début bas gauche-->
   <div class="col-sm-9">
   <?php 
-    include 'detail_livre.php'; 
+    include 'd.php'; 
     ?>
   </div>
   <!-- fin bas gauche-->
@@ -52,7 +52,6 @@ session_start();
 
    <?php
    $_SESSION["utilisateur"] = $enregistrement->mel;
-   echo 'test nom utilisateur'
    ?>
   </body>
 </html>
