@@ -36,7 +36,7 @@ session_start();
   <!-- début bas gauche-->
   <div class="col-sm-9">
   <?php 
-    include 'd.php'; 
+    include 'lister_livres.php'; 
     ?>
   </div>
   <!-- fin bas gauche-->

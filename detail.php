@@ -10,7 +10,7 @@
 <body>
 <?php
 require_once('connexion.php');
-$stmt = $connexion->prepare("SELECT nom, prenom, detail, isbn13, photo FROM livre INNER JOIN auteur ON (livre.noauteur = auteur.noauteur) where livre.nolivre=:nolivre");
+$stmt = $connexion->prepare("SELECT nom, prenom, dateretour, detail, isbn13, photo FROM livre INNER JOIN auteur ON (livre.noauteur = auteur.noauteur) LEFT OUTER JOIN emprunter ON (livre.nolivre = emprunter.nolivre) where livre.nolivre=:nolivre");
 $nolivre = $_GET["nolivre"];
 $stmt->bindValue(":nolivre", $nolivre); // pas de troisième paramètre STR par défaut
 $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -30,6 +30,12 @@ echo "Résumé du livre";
 echo "<BR>";
 echo "<BR>";
 echo $enregistrement->detail;
+echo "<BR>";
+if ($enregistrement->dateretour == NULL) {
+    echo "Disponible";
+} else {
+    echo "Non disponible";
+}
 ?>
 </div>
 <div class="col-sm-3">
