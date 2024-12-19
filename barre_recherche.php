@@ -19,6 +19,5 @@ Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
         </div>
       </div>
     </nav>
-  </div>
 
   

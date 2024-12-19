@@ -19,20 +19,20 @@ session_start();
   <?php 
     include 'barre_recherche.php'; 
     ?>
-  
-<!-- fin haut gauche-->
+</div>
+  <!-- fin haut gauche-->
 
   <!-- début haut droit-->
   <div class="col-sm-3">
   <?php 
     include 'image.php'; 
     ?>
-  </div>
+</div>
+ </div>
   <!-- fin haut droit-->
   
 
 <div class="row">
-  
   <!-- début bas gauche-->
   <div class="col-sm-9">
   <?php 
@@ -40,13 +40,15 @@ session_start();
     ?>
   <!-- fin bas gauche-->
   
-  
   <!-- début bas droit-->
   <div class="col-sm-3">
   <?php 
     include 'authentification.php'; 
     ?>
 </div>
-   <!-- fin bas droit-->
-  </body>
-</html>
+ </div>
+ <!-- fin bas droit-->
+
+
+</body>
+ </html>

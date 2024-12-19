@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<title>panier Bibliodrive </title>
+  <title>liste livre</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -20,26 +20,27 @@ session_start();
     include 'barre_recherche.php'; 
     ?>
 </div>
-  <!-- fin haut gauche-->
-  
+<!-- fin haut gauche-->
+
   <!-- début haut droit-->
   <div class="col-sm-3">
   <?php 
     include 'image.php'; 
     ?>
 </div>
-  </div>
-  <!-- fin haut droit-->
-
-<div class="row">
+ </div>
+<!-- fin haut droit-->
   
+<div class="row">
   <!-- début bas gauche-->
   <div class="col-sm-9">
-
-  </div>
+  <?php 
+    include 'lister_livres.php'; 
+    ?>
+</div>
   <!-- fin bas gauche-->
   
-   <!-- début bas droit-->
+  <!-- début bas droit-->
   <div class="col-sm-3">
   <?php 
     include 'authentification.php'; 
@@ -47,10 +48,6 @@ session_start();
 </div>
  </div>
 <!-- fin bas droit-->
-
-<?php
-   $_SESSION["utilisateur"] = $enregistrement->mel;
-   ?>
-  </body>
+  
+</body>
 </html>
-
