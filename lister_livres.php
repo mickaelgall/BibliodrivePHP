@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>liste livre</title>
+  <title>accueil Bibliodrive</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -19,33 +19,25 @@ session_start();
   <?php 
     include 'barre_recherche.php'; 
     ?>
-  
-<!-- fin haut gauche-->
+</div>
+  <!-- fin haut gauche-->
 
   <!-- début haut droit-->
   <div class="col-sm-3">
   <?php 
     include 'image.php'; 
     ?>
-  </div>
+</div>
+ </div>
   <!-- fin haut droit-->
   
+
 <div class="row">
   <!-- début bas gauche-->
   <div class="col-sm-9">
-  <?php
-require_once('connexion.php');
-$stmt = $connexion->prepare("SELECT nolivre, titre, anneeparution FROM livre INNER JOIN auteur ON (livre.noauteur = auteur.noauteur) where auteur.nom=:nom ORDER BY anneeparution");
-$nom = $_POST["rchAuteur"];
-$stmt->bindValue(":nom", $nom); // pas de troisième paramètre STR par défaut
-$stmt->setFetchMode(PDO::FETCH_OBJ);
-// Les résultats retournés par la requête seront traités en 'mode' objet
-$stmt->execute();
-while($enregistrement = $stmt->fetch())
-{
-echo '<h1>',"<a href='detail.php?nolivre=".$enregistrement->nolivre."'>".$enregistrement->titre, ' ', ' ', '(', $enregistrement->anneeparution, ')', "</a>",'</h1>';
-}
-?>
+  <?php 
+    include 'page_lister_livres.php'; 
+    ?>
   <!-- fin bas gauche-->
   
   <!-- début bas droit-->
@@ -54,6 +46,9 @@ echo '<h1>',"<a href='detail.php?nolivre=".$enregistrement->nolivre."'>".$enregi
     include 'authentification.php'; 
     ?>
 </div>
-   <!-- fin bas droit-->
-  </body>
-</html>
+ </div>
+ <!-- fin bas droit-->
+
+
+</body>
+ </html>
