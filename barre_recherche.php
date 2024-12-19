@@ -14,7 +14,7 @@ Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
             </li>
           <form class="d-flex" action="lister_livres.php" method="post">
             <input class="form-control me-2" type="text" placeholder="chercher un auteur" name="rchAuteur" >
-            <button class="btn btn-primary" type="submit">rechercher</button>
+            <button class="btn btn-light"  type="submit">rechercher</button>
           </form>
         </div>
       </div>
