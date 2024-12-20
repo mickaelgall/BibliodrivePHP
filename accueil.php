@@ -48,7 +48,9 @@ session_start();
 </div>
  </div>
  <!-- fin bas droit-->
-
+ <?php
+   $_SESSION["userNom"] = $enregistrement->mel;
+   ?>
 
 </body>
  </html>
