@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,25 +20,36 @@ $stmt->setFetchMode(PDO::FETCH_OBJ);
 // Les résultats retournés par la requête seront traités en 'mode' objet
 $stmt->execute();
 $enregistrement = $stmt->fetch();
-?>
-<div class="row">
-<div class="col-sm-9">
-<?php
+
+
 echo "Auteur : ".$enregistrement->prenom." ", $enregistrement->nom;
-echo "<BR>";
-echo "<BR>";
+echo "<br>";
+echo "<br>";
 echo "ISBN13 : ".$enregistrement->isbn13;
-echo "<BR>";
+echo "<br>";
 echo "Résumé du livre";
-echo "<BR>";
-echo "<BR>";
+echo "<br>";
+echo "<br>";
 echo $enregistrement->detail;
-echo "<BR>";
-if ($enregistrement->dateretour == NULL) {
-    echo "Disponible";
-} else {
-    echo "Non disponible";
+echo "<br>";
+if (isset($_SESSION["prenom"]))
+{
+
+  if (!isset($_POST['emprunter']))
+    {
+    echo '<form method="post">
+    <div class="input-group-btn">
+    <button class="btn btn-default" name="emprunter" type="submit"> Emprunter (ajout au panier)</button>
+</div> </form>';
+
+}else{
+echo 'test';
 }
+
+}else{
+  echo 'Pour pouvoir réserver vous devez posséder un compte et vous identifier.';
+}
+
 ?>
 </div>
 <div class="col-sm-3">
