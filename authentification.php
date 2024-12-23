@@ -9,7 +9,7 @@ if (!isset ($_SESSION["mel"]))
 
 if (!isset($_POST['btnconnexion'])) { 
     echo '<form method="post" >
-        Mel: <input name="mel" class="form-control" type="text" size ="30">
+        mail: <input name="mel" class="form-control" type="text" size ="30">
         Mot de passe: <input name="motdepasse" class="form-control type="text" size ="30">
         <div class="text-center">
         <input type="submit" class="btn btn-default" name="btnconnexion"  value="Connexion">
