@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION["utilisateur"] 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -36,7 +37,7 @@ session_start();
   <!-- début bas gauche-->
   <div class="col-sm-9">
   <?php 
-    include 'réservé_panier.php'; 
+    include 'réservé_panier.php';
     ?>
   </div>
   <!-- fin bas gauche-->
@@ -50,8 +51,6 @@ session_start();
  </div>
 <!-- fin bas droit-->
 
-<?php
-   $_SESSION["userNom"] = $enregistrement->mel;
-   ?>
+
   </body>
 </html>

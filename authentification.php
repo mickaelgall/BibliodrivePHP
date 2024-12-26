@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <?php
 if (!isset ($_SESSION["mel"]))
 {
@@ -38,10 +34,11 @@ if (!isset($_POST['btnconnexion'])) {
         $_SESSION["adresse"] = $enregistrement->adresse;
         $_SESSION["codepostal"] = $enregistrement->codepostal;
         $_SESSION["ville"] = $enregistrement->ville;
-        header("Refresh:0");
+        header("Location: ".$_SERVER['PHP_SELF']);
+        exit();
     } else { 
         echo "Echec à la connexion.";
-        header("Refresh:2");
+        header("Refresh:1");
     }
 }
 } else {
@@ -67,10 +64,10 @@ if (!isset($_POST['btnconnexion'])) {
 {
     session_unset();         
     session_destroy();
-    header("Refresh:0");
+    header("Location: ".$_SERVER['PHP_SELF']);
+    exit();
 }
     
 }
+
 ?>
-</body>
-</html>
