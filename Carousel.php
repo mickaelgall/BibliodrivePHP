@@ -32,4 +32,3 @@
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>
-  </div> 

@@ -37,18 +37,44 @@ session_start();
   <div class="col-sm-9">
   <?php
 require_once('connexion.php');
-$stmt = $connexion->prepare("SELECT nolivre, titre, anneeparution FROM livre INNER JOIN auteur ON (livre.noauteur = auteur.noauteur) where auteur.nom=:nom ORDER BY anneeparution");
-$nom = $_POST["rchAuteur"];
-$stmt->bindValue(":nom", $nom); // pas de troisième paramètre STR par défaut
+$stmt = $connexion->prepare("SELECT nom, prenom, dateretour, detail, isbn13, photo FROM livre INNER JOIN auteur ON (livre.noauteur = auteur.noauteur) LEFT OUTER JOIN emprunter ON (livre.nolivre = emprunter.nolivre) where livre.nolivre=:nolivre");
+$nolivre = $_GET["nolivre"];
+$stmt->bindValue(":nolivre", $nolivre); // pas de troisième paramètre STR par défaut
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 // Les résultats retournés par la requête seront traités en 'mode' objet
 $stmt->execute();
-while($enregistrement = $stmt->fetch())
+$enregistrement = $stmt->fetch();
+
+
+echo "Auteur : ".$enregistrement->prenom." ", $enregistrement->nom;
+echo "<br>";
+echo "<br>";
+echo "ISBN13 : ".$enregistrement->isbn13;
+echo "<br>";
+echo "Résumé du livre";
+echo "<br>";
+echo "<br>";
+echo $enregistrement->detail;
+echo "<br>";
+if (isset($_SESSION["prenom"]))
 {
-echo '<h1>',"<a href='page_detail.php?nolivre=".$enregistrement->nolivre."'>".$enregistrement->titre, ' ', ' ', '(', $enregistrement->anneeparution, ')', "</a>",'</h1>';
+
+  if (!isset($_POST['emprunter']))
+    {
+    echo '<form method="post">
+    <div class="input-group-btn">
+    <button class="btn btn-default" name="emprunter" type="submit"> Emprunter (ajout au panier)</button>
+</div> </form>';
+
+}else{
+echo 'livre ajouter au panier';
 }
+
+}else{
+  echo 'Pour pouvoir réserver vous devez posséder un compte et vous identifier.';
+}
+
 ?>
-</div>
   <!-- fin bas gauche-->
   
   <!-- début bas droit-->
@@ -57,9 +83,10 @@ echo '<h1>',"<a href='page_detail.php?nolivre=".$enregistrement->nolivre."'>".$e
     include 'authentification.php'; 
     ?>
 </div>
- </div>
  <!-- fin bas droit-->
-
+ <?php
+   $_SESSION["utilisateur"] = $enregistrement->mel;
+   ?>
 
 </body>
  </html>

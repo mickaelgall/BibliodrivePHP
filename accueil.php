@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>accueil Bibliodrive</title>
+<title>panier Bibliodrive </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -21,36 +21,37 @@ session_start();
     ?>
 </div>
   <!-- fin haut gauche-->
-
+  
   <!-- début haut droit-->
   <div class="col-sm-3">
   <?php 
     include 'image.php'; 
     ?>
 </div>
- </div>
+  </div>
   <!-- fin haut droit-->
-  
 
 <div class="row">
+  
   <!-- début bas gauche-->
   <div class="col-sm-9">
   <?php 
-    include 'Carousel.php'; 
+    include 'Carousel.php';
     ?>
+  </div>
   <!-- fin bas gauche-->
   
-  <!-- début bas droit-->
+   <!-- début bas droit-->
   <div class="col-sm-3">
   <?php 
     include 'authentification.php'; 
     ?>
 </div>
  </div>
- <!-- fin bas droit-->
- <?php
+<!-- fin bas droit-->
+
+<?php
    $_SESSION["utilisateur"] = $enregistrement->mel;
    ?>
-
-</body>
- </html>
+  </body>
+</html>

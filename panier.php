@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION["utilisateur"] 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -51,6 +50,8 @@ $_SESSION["utilisateur"]
  </div>
 <!-- fin bas droit-->
 
-
+<?php
+   $_SESSION["utilisateur"] = $enregistrement->mel;
+   ?>
   </body>
 </html>
