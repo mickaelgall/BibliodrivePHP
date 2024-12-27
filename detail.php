@@ -11,7 +11,6 @@ $enregistrement = $stmt->fetch();
 
 echo "Auteur : ".$enregistrement->prenom." ", $enregistrement->nom;
 echo "<br>";
-echo "<br>";
 echo "ISBN13 : ".$enregistrement->isbn13;
 echo "<br>";
 echo "Résumé du livre";
@@ -26,7 +25,7 @@ if (isset($_SESSION["prenom"]))
     {
     echo '<form method="post">
     <div class="input-group-btn">
-    <button class="btn btn-default" name="emprunter" type="submit"> Emprunter (ajout au panier)</button>
+    <button class="btn btn-success" name="emprunter" type="button"> Emprunter (ajout au panier)</button>
 </div> </form>';
 
 }else{
@@ -34,7 +33,6 @@ echo 'livre ajouter au panier';
 }
 
 }else{
-  echo 'Pour pouvoir réserver vous devez posséder un compte et vous identifier.';
-}
+  echo '<p class="text-primary">Pour pouvoir réserver vous devez posséder un compte et vous identifier !</p>';
 
-?>
+}
