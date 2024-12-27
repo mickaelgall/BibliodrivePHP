@@ -12,7 +12,7 @@ Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
             <li class="nav-item">
               <a class="nav-link" href="http://127.0.0.1/PHP/BibliodrivePHP/panier.php">panier<img src="Livre.jpg" alt="bibliothèque " width="35" height="35"></a>
             </li>
-          <form class="d-flex" action="lister_livres.php" method="post">
+          <form class="d-flex" action="page_liste_livres.php" method="post">
             <input class="form-control me-2" type="text" placeholder="chercher un auteur" name="rchAuteur" >
             <button class="btn btn-light"  type="submit">rechercher</button>
           </form>

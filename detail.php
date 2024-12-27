@@ -30,7 +30,7 @@ if (isset($_SESSION["prenom"]))
 </div> </form>';
 
 }else{
-echo 'test';
+echo 'livre ajouter au panier';
 }
 
 }else{
@@ -38,5 +38,3 @@ echo 'test';
 }
 
 ?>
-</body>
-</html>
