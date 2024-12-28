@@ -34,7 +34,7 @@ if (!isset($_POST['btnconnexion'])) {
         $_SESSION["adresse"] = $enregistrement->adresse;
         $_SESSION["codepostal"] = $enregistrement->codepostal;
         $_SESSION["ville"] = $enregistrement->ville;
-        header("Location: ".$_SERVER['PHP_SELF']);
+        header("Refresh:0");
         exit();
     } else { 
         echo "Echec à la connexion.";
@@ -64,7 +64,7 @@ if (!isset($_POST['btnconnexion'])) {
 {
     session_unset();         
     session_destroy();
-    header("Location: ".$_SERVER['PHP_SELF']);
+    header("Refresh:0");
     exit();
 }
     
