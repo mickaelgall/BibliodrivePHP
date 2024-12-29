@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>liste livre</title>
+<title>page panier</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -21,27 +21,27 @@ session_start();
     ?>
 </div>
   <!-- fin haut gauche-->
-
+  
   <!-- début haut droit-->
   <div class="col-sm-3">
   <?php 
     include 'image.php'; 
     ?>
 </div>
- </div>
+  </div>
   <!-- fin haut droit-->
-  
 
 <div class="row">
+  
   <!-- début bas gauche-->
   <div class="col-sm-9">
-  <?php
-    include 'liste_livres.php'; 
-?>
-</div>
+  <?php 
+    include 'panier.php';
+    ?>
+  </div>
   <!-- fin bas gauche-->
   
-  <!-- début bas droit-->
+   <!-- début bas droit-->
   <div class="col-sm-3">
   <?php 
     include 'authentification.php'; 
@@ -49,6 +49,16 @@ session_start();
 </div>
  </div>
   </div>
- <!-- fin bas droit-->
+<!-- fin bas droit-->
+
+  </body>
+</html>
+
+
+
+
+
+
+
 
 

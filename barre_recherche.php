@@ -10,7 +10,7 @@ Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
         <div class="collapse navbar-collapse" id="mynavbar">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1/PHP/BibliodrivePHP/panier.php">panier<img src=".\image_site\Livre_minecraft.jpg" alt="bibliothèque " width="35" height="35"></a>
+              <a class="nav-link" href="http://127.0.0.1/PHP/BibliodrivePHP/page_panier.php">panier<img src=".\image_site\Livre_minecraft.jpg" alt="bibliothèque " width="35" height="35"></a>
             </li>
           <form class="d-flex" action="page_liste_livres.php" method="post">
             <input class="form-control me-2" type="text" placeholder="chercher un auteur" name="rchAuteur" >
