@@ -6,7 +6,8 @@
   $livres = $stmt->fetchAll();
 ?>
 
-<div class="container-fluid sm-3">
+
+<div class="container">
   <h3 class="text-center">Dernières acquisitions:</h3>
 </div>
 
