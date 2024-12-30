@@ -1,23 +1,48 @@
-Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil | BiblioDrive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
     <br> <!--espace de ligne-->
     Le site est en maintenance jusqu'au 6 janvier 2025, en attendant prenez soins du panier, merci de votre visite.
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="http://127.0.0.1/PHP/BibliodrivePHP/accueil.php">   <img src=".\image_site\table-enchantement-minecraft.jpg" width="50" height="50"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1/PHP/BibliodrivePHP/page_panier.php">panier<img src=".\image_site\Livre_minecraft.jpg" alt="bibliothèque " width="35" height="35"></a>
-            </li>
-          <form class="d-flex" action="page_liste_livres.php" method="post">
-            <input class="form-control me-2" type="text" placeholder="chercher un auteur" name="rchAuteur" >
-            <button class="btn btn-light"  type="submit">rechercher</button>
-          </form>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://127.0.0.1/PHP/BibliodrivePHP/accueil.php">   
+                <img src=".\image_site\table-enchantement-minecraft.jpg" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1/PHP/BibliodrivePHP/page_panier.php">
+                            panier
+                            <img src=".\image_site\Livre_minecraft.jpg" alt="bibliothèque " width="35" height="35">
+                        </a>
+                    </li>
+                    <!-- Ajout du bouton pour ajouter un livre si l'utilisateur est admin -->
+                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1/PHP/BibliodrivePHP/ajout_livre_admin.php">Ajouter un Livre</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+                <form class="d-flex" action="page_liste_livres.php" method="post">
+                    <input class="form-control me-2" type="text" placeholder="chercher un auteur" name="rchAuteur" >
+                    <button class="btn btn-light" type="submit">rechercher</button>
+                </form>
+            </div>
         </div>
-      </div>
     </nav>
+</body>
+</html>
+
 
   
