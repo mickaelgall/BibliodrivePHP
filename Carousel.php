@@ -8,7 +8,7 @@
 
 
 <div class="container">
-  <h3 class="text-center">Dernières acquisitions:</h3>
+  <h3 class="text-center">Dernières acquisitions de ma bibliodrive :</h3>
 </div>
 
 <div id="demo" class="carousel slide" data-bs-ride="carousel">

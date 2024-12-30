@@ -1,56 +1,66 @@
- <?php
-    // Connexion à la base de données MySQL 
-    require_once('connexion.php');
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    // Envoi de la requête vers MySQL
-    if(isset($_GET["nolivre"])) {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<?php
+require_once('connexion.php');
+$stmt = $connexion->prepare("SELECT nom, prenom, dateretour, detail, isbn13, anneeparution, photo, titre FROM livre INNER JOIN auteur ON (livre.noauteur = auteur.noauteur) LEFT OUTER JOIN emprunter ON (livre.nolivre = emprunter.nolivre) where livre.nolivre=:nolivre");
+$nolivre = $_GET["nolivre"];
+$stmt->bindValue(":nolivre", $nolivre); // pas de troisième paramètre STR par défaut
+$stmt->setFetchMode(PDO::FETCH_OBJ);
+// Les résultats retournés par la requête seront traités en 'mode' objet
+$stmt->execute();
+$enregistrement = $stmt->fetch();
+?>
+<div class="row">
+<div class="col-sm-8">
+<?php
+echo "ISBN13 : ".$enregistrement->isbn13; 
+echo "<br>";
+echo "Auteur : ".$enregistrement->prenom." ", $enregistrement->nom;
+echo "Titre : ".$enregistrement->titre." ", $enregistrement->anneeparution;
+echo "<br>";
+echo "<br>";
+echo "Résumé du livre :";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo $enregistrement->detail;
 
-    $select = $connexion->prepare("SELECT * FROM livre
-    INNER JOIN auteur ON livre.noauteur = auteur.noauteur
-    WHERE livre.nolivre LIKE :livre");
-     $select->bindValue(":livre", $_GET['nolivre'], PDO::PARAM_STR);
-    $select->setFetchMode(PDO::FETCH_OBJ);
-    $select->execute();
-  
-    while($enregistrement = $select->fetch()){
-      ?>
-      <div class="row">
-      <div class="col-sm-8">
-      <?php
-                echo '<h3 id="isbn13">ISBN-13 : ', $enregistrement->isbn13, '</h3>';   
-                echo '<h3 id="titre">Titre : ', $enregistrement->titre, " (", $enregistrement->anneeparution, ")", '</h3>';
-                echo '<h3 id="auteur">Auteur : ', $enregistrement->prenom, ' ', $enregistrement->nom, '</h3>';
-                echo '<div class="resume">';
-                echo '<h2>Résumé du livre : </h2>', '<p id="resume">', $enregistrement->detail, '</p>';
-                echo '</div>';
-                ?>
-            </div>
-            <div class="col-sm-4">
-                <img src="./images/<?php echo htmlspecialchars($enregistrement->photo); ?>" class="d-block w-100" alt="Image de couverture">
-            </div>
-        </div>
-        <?php
-
-      if($_SESSION){ 
-        echo '<form method="POST">';
-        echo '<input type="submit" name="btn-ajoutpanier" class="btn btn-success btn-lg" value="Ajouter au panier"></input>';
-        echo '</form>';
-      }else{
-        echo '<h4>Veuillez vous connecter pour emprunter un livre.</h4>';
-      }
-
-      if(!isset($_SESSION['panier'])){
-     // Initialisation du panier
-     $_SESSION['panier'] = array();
-    }
-  
-    // On ajoute les entrées dans le tableau
-  if(isset($_POST['btn-ajoutpanier'])){
-      array_push($_SESSION['panier'], $enregistrement->titre);  
-      echo "Livre ajouté avec succès.";
-  }
+?>
+</div>
+<div class="col-sm-4">
+<img src="./images/<?php echo $enregistrement->photo; ?>" class="d-block w-100" alt="Image de couverture">
+</div>
+<?php
+if (isset($_SESSION["prenom"]))
+{
+  echo '<form method="POST">';
+  echo '<input type="submit" name="btn-ajoutpanier" class="btn btn-success btn-lg" value="Ajouter au panier"></input>';
+  echo '</form>';
+}else{
+  echo '<p class="text-primary">Pour pouvoir réserver ce livre vous devez posséder un compte et vous identifier !</p>';
 }
-    }
-    ?>
-                
-        
+
+if(!isset($_SESSION['panier'])){
+// Initialisation du panier
+$_SESSION['panier'] = array();
+}
+
+// On ajoute les entrées dans le tableau
+if(isset($_POST['btn-ajoutpanier'])){
+array_push($_SESSION['panier'], $enregistrement->titre);  
+echo "Livre ajouté à votre panier :)";
+}
+?>
+</div>
+</body>
+</html>
+
+

@@ -48,6 +48,6 @@ session_start();
     include 'authentification.php'; 
     ?>
 </div>
-
-
+ </div>
+  </div>
  <!-- fin bas droit-->
