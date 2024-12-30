@@ -1,5 +1,4 @@
 <?php
-
 if (!isset($_SESSION["mel"])) {
     if (!isset($_POST['btnconnexion'])) { 
         ?>
@@ -32,8 +31,8 @@ if (!isset($_SESSION["mel"])) {
             $_SESSION["adresse"] = $enregistrement->adresse;
             $_SESSION["codepostal"] = $enregistrement->codepostal;
             $_SESSION["ville"] = $enregistrement->ville;
-            $_SESSION["role"] = $enregistrement->role; // Ajout de la session pour le rôle
-            header("Refresh:0"); // Rafraîchir la page actuelle
+            $_SESSION["role"] = $enregistrement->role;
+            header("Refresh:0");
             exit();
         } else { 
             echo "Echec à la connexion.";
@@ -62,7 +61,7 @@ if (!isset($_SESSION["mel"])) {
     <?php } else {
         session_unset();         
         session_destroy();
-        header("Refresh:0"); // Rafraîchir la page actuelle
+        header("Refresh:0");
         exit();
     }
 }
