@@ -38,7 +38,7 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
   <!-- début bas gauche-->
   <div class="col-sm-9">
   <?php 
-    include 'ajouter un livre_admin.php'; 
+    include 'ajouter_un_livre_admin.php'; 
     ?>
   </div>
   <!-- fin bas gauche-->
