@@ -1,6 +1,6 @@
 
 
-Bonjour administrateur je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
+Vous ètes a l'espace administrateur, je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
     <br> <!--espace de ligne-->
     Le site est en maintenance jusqu'au 10 janvier 2025, merci de votre visite.
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">

@@ -45,6 +45,9 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
 
 <li>créer un membre</li>
 
+<br>
+
+<lh>Pour revenir a l'accueil client deconnecter vous !</lh>
 </ul>
   </div>
   <!-- fin bas gauche-->

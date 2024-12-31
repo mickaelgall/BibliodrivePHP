@@ -56,7 +56,7 @@
 
         <form action="" method="post">
             <div class="mb-3">
-                <input type="email" class="form-control" id="mel" name="mel" placeholder="Mel (Email)" required>
+                <input type="email" class="form-control" id="mel" name="mel" placeholder="Email" required>
             </div>
             <div class="mb-3">
                 <input type="password" class="form-control" id="motdepasse" name="motdepasse" placeholder="Mot de passe" required>
