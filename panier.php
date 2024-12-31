@@ -29,7 +29,7 @@
           } 
           
           if (empty($_SESSION['panier'])){
-            echo '<h5 id="vide"><img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150">Votre panier est triste sans lumière :( ajouter un livre !<img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150"></h5>';
+            echo '<h5 id="vide"><img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150">Votre panier est triste sans lumière ): ajouter un livre !<img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150"></h5>';
           } else {
             echo '<h5 id="rempli"><img src="./image_site/Torche allumé.gif" width="100" height="110">Votre panier vous remercie ;) <img src="./image_site/Torche allumé.gif" width="100" height="110"></h5>';
             echo '<form method="POST">';

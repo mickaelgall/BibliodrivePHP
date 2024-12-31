@@ -30,7 +30,7 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
     include 'image.php'; 
     ?>
 </div>
-  </div>
+</div>
   <!-- fin haut droit-->
 
 <div class="row">
@@ -40,7 +40,7 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
   <?php 
     include 'Carousel.php';
     ?>
-  </div>
+</div>
   <!-- fin bas gauche-->
   
    <!-- début bas droit-->
@@ -50,9 +50,7 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
     ?>
 </div>
  </div>
-  </div>
+</div>
 <!-- fin bas droit-->
-
-
-  </body>
+</body>
 </html>

@@ -1,4 +1,6 @@
 <?php
+ // Démarre la temporisation de sortie pour éviter les problèmes de header
+
 if (!isset($_SESSION["mel"])) {
     if (!isset($_POST['btnconnexion'])) { 
         ?>
@@ -31,8 +33,13 @@ if (!isset($_SESSION["mel"])) {
             $_SESSION["adresse"] = $enregistrement->adresse;
             $_SESSION["codepostal"] = $enregistrement->codepostal;
             $_SESSION["ville"] = $enregistrement->ville;
-            $_SESSION["role"] = $enregistrement->role;
-            header("Refresh:0");
+            $_SESSION["profil"] = $enregistrement->profil;
+
+            if ($_SESSION["profil"] === "admin") {
+                header("Location: accueil_admin.php"); // Redirection vers la page admin
+            } else {
+                header("Location: accueil.php"); // Redirection vers la page client
+            }
             exit();
         } else { 
             echo "Echec à la connexion.";
@@ -48,7 +55,7 @@ if (!isset($_SESSION["mel"])) {
     <h3 class="text-center"><?php echo $_SESSION["adresse"]; ?></h3>
     <h3 class="text-center"><?php echo $_SESSION["codepostal"] . ', ' . $_SESSION["ville"]; ?></h3>
     
-    <?php if ($_SESSION["role"] === "admin"): ?>
+    <?php if ($_SESSION["profil"] === "admin"): ?>
         <p class="text-center">Bienvenue, administrateur</p>
     <?php endif; ?>
     
@@ -61,7 +68,7 @@ if (!isset($_SESSION["mel"])) {
     <?php } else {
         session_unset();         
         session_destroy();
-        header("Refresh:0");
+        header("Location: accueil.php");
         exit();
     }
 }
