@@ -5,9 +5,9 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<link rel="stylesheet" type="text/css" href="style.css"/>
 <title>accueil Bibliodrive admin</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -39,15 +39,15 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
   <div class="col-sm-9">
   <ul>
 
-<lh>Bienvenue administrateur, ici vous pouvez:</lh>
+<lh class="accueiladmin1"> Bienvenue administrateur, ici vous pouvez:</lh>
 
-<li>ajouter un livre</li>
+<li class="accueiladmin2">ajouter un livre</li>
 
-<li>créer un membre</li>
+<li class="accueiladmin2">créer un membre</li>
 
 <br>
 
-<lh>Pour revenir a l'accueil client deconnecter vous !</lh>
+<lh class="accueiladmin1">Pour revenir a l'accueil client deconnecter vous !</lh>
 </ul>
   </div>
   <!-- fin bas gauche-->
