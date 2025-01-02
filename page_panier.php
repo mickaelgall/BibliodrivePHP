@@ -5,7 +5,7 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<title>page panier</title>
+<title>page panier outil client</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   

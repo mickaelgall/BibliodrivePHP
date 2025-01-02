@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BiblioDrive | Panier</title>
-    <link rel="stylesheet">
-</head>
-<body>
-   <?php
+<?php
    if(!isset($_SESSION['panier'])){
        // Initialisation du panier
        $_SESSION['panier'] = array();
     }
    ?>
-   <h1 id='panier'>Votre panier <img src="./image_site/Livre_minecraft.jpg" width="50" height="50"></h1>  
+   <h1 id='panier'>Votre panier outil client <img src="./image_site/Livre_minecraft.jpg" width="50" height="50"></h1>  
    <?php 
         
         // Affichage du panier 
@@ -39,6 +30,15 @@
             echo '<input type="submit" name="valider" class="btn btn-success btn-lg" value="Valider le panier">';
             echo '</form>';
         }
+         /* Requête permettant de supprimer un contenu du panier en cliquant 
+            sur le bouton 'annuler' */
+
+            if(isset($_POST['annuler'])){
+                unset($_SESSION['panier'][array_search($_SESSION['panier'][$id], $_SESSION['panier'])]);
+                sort($_SESSION['panier']);
+                header("refresh: 0");
+              }
+
         if(isset($_POST['valider'])){
           require_once('connexion.php');
           $mel = $_SESSION['mel'];
@@ -50,7 +50,7 @@
               $nolivre = trim($nolivre);
       
               // Afficher la valeur de $nolivre pour débogage
-              echo "Tentative d'ajout du livre avec nolivre: $nolivre<br>";
+              echo "Tentative d'ajout du livre: $nolivre<br>";
       
               // Requête pour ajouter les informations du livre dans la base de données SQL
               try {
@@ -70,14 +70,5 @@
           header("refresh 0"); // Rediriger pour éviter la resoumission du formulaire
           exit;
       }
-      
-          
-              
-              
-              
-              
-              
-          
+       
     ?>
-</body>
-</html>

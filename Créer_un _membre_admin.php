@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Créer un Membre</h1>
+        <h1>Créer un Membre outil admin</h1>
 
         <?php
         require_once 'connexion.php'; // Inclure le fichier de connexion à la base de données

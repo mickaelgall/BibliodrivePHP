@@ -6,7 +6,7 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<title>accueil Bibliodrive </title>
+<title>créer un membre outil admin </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
