@@ -11,11 +11,11 @@
 
           $nb_livresempruntés = count($_SESSION['panier']); 
           $nb_emprunts = (5 - $nb_livresempruntés);
-          echo '<h5 class="couleur2" id="reste">(Il vous reste ', $nb_emprunts ,' réservations possibles.)</h5>';
+          echo '<h5 class="couleur3" id="reste">(Il vous reste ', $nb_emprunts ,' réservations possibles.)</h5>';
           for ($id =0 ;$id < $nb_livresempruntés; $id++){
             echo '<form method="POST">';
             echo '<p id="contenupanier">', $_SESSION['panier'][$id];
-            echo '<input type="submit" id="contenupanier" name="annuler" class="btn btn-danger btn-sm" value="Annuler la réservation">';
+            echo '<input type="submit" id="contenupanier" name="annuler" class="btn btn-danger"  value="suprimer du panier">';
             echo '</form></p>';
           } 
           

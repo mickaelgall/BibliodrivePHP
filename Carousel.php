@@ -10,8 +10,8 @@ $livres = $stmt->fetchAll();
   <h3 class="text-center couleur1">Dernières acquisitions de ma bibliodrive :</h3>
 </div>
 
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
+<div id="demo" class="carousel slide carousel-fade carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators ">
     <?php for ($i = 0; $i < count($livres); $i++): ?>
       <button type="button" data-bs-target="#demo" data-bs-slide-to="<?= $i ?>" class="<?= $i == 0 ? 'active' : '' ?>"></button>
     <?php endfor; ?>

@@ -40,7 +40,7 @@ ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes d
   <div class="col-sm-9">
   <ul>
 
-<lh class="accueiladmin1"> Bienvenue administrateur, ici vous pouvez:</lh>
+<lh class="accueiladmin1"> Bienvenue à l'espace administrateur, ici vous pouvez:</lh>
 
 <li class="accueiladmin2">ajouter un livre</li>
 
