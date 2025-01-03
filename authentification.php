@@ -4,11 +4,11 @@
 if (!isset($_SESSION["mel"])) {
     if (!isset($_POST['btnconnexion'])) { 
         ?>
-        <form method="post">
-            votre mail: <input name="mel" class="form-control" type="text" size="30">
-            votre Mot de passe: <input name="motdepasse" class="form-control" type="text" size="30">
+        <form method="post"class="couleur1">
+            votre mail: <input name="mel" class="form-control" type="text">
+            votre Mot de passe: <input name="motdepasse" class="form-control" type="text">
             <div class="text-center">
-                <input type="submit" class="btn btn-default" name="btnconnexion" value="Connexion">
+                <input type="submit" class="btn btn-success" name="btnconnexion" value="Connexion">
                 <br>
                 <br>
             </div>
@@ -42,8 +42,8 @@ if (!isset($_SESSION["mel"])) {
             }
             exit();
         } else { 
-            echo "Echec à la connexion.";
-            header("Refresh:1");
+            echo "Echec de la connexion.";
+            header("Refresh:2");
             exit();
         }
     }
@@ -55,14 +55,18 @@ if (!isset($_SESSION["mel"])) {
     <h3 class="text-center"><?php echo $_SESSION["adresse"]; ?></h3>
     <h3 class="text-center"><?php echo $_SESSION["codepostal"] . ', ' . $_SESSION["ville"]; ?></h3>
     
+    <?php if ($_SESSION["profil"] === "client"): ?>
+        <br><h4 class="text-center">Bienvenue <?php echo $_SESSION["prenom"] . ' ' . $_SESSION["nom"]; ?></h4>
+    <?php endif; ?>
+    
     <?php if ($_SESSION["profil"] === "admin"): ?>
-        <p class="text-center">Bienvenue, administrateur</p>
+        <br><h4 class="text-center">Bienvenue, administrateur : <?php echo $_SESSION["prenom"] . ' ' . $_SESSION["nom"]; ?></h4>
     <?php endif; ?>
     
     <?php if (!isset($_POST['deco'])) { ?>
     <form method="post">
-        <div class="input-group-btn">
-            <button class="btn btn-default" name="deco" type="submit">Déconnexion</button>
+        <div class="input-group-btn text-center">
+            <button class="btn btn-danger" name="deco" type="submit">Déconnexion</button>
         </div>
     </form>
     <?php } else {

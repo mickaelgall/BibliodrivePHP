@@ -4,14 +4,14 @@
        $_SESSION['panier'] = array();
     }
    ?>
-   <h1 id='panier'>Votre panier outil client <img src="./image_site/Livre_minecraft.jpg" width="50" height="50"></h1>  
+   <h1 id='panier'class="couleur1">Votre panier <img src="./image_site/Livre_minecraft.jpg" width="50" height="50"></h1>  
    <?php 
         
         // Affichage du panier 
 
           $nb_livresempruntés = count($_SESSION['panier']); 
           $nb_emprunts = (5 - $nb_livresempruntés);
-          echo '<h5 id="reste">(Il vous reste ', $nb_emprunts ,' réservations possibles.)</h5>';
+          echo '<h5 class="couleur2" id="reste">(Il vous reste ', $nb_emprunts ,' réservations possibles.)</h5>';
           for ($id =0 ;$id < $nb_livresempruntés; $id++){
             echo '<form method="POST">';
             echo '<p id="contenupanier">', $_SESSION['panier'][$id];
@@ -20,9 +20,9 @@
           } 
           
           if (empty($_SESSION['panier'])){
-            echo '<h5 id="vide"><img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150">Votre panier est triste sans lumière ): ajouter un livre !<img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150"></h5>';
+            echo '<h5 id="vide"><img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150">Votre panier est triste sans lumière <img src="./image_site/Emoji_triste.gif" width="40" height="40"> ajouter un livre !<img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150"></h5>';
         } else {
-            echo '<h5 id="rempli"><img src="./image_site/Torche allumé.gif" width="100" height="110">Votre panier vous remercie ;) <img src="./image_site/Torche allumé.gif" width="100" height="110"></h5>';
+            echo '<h5 id="rempli"><img src="./image_site/Torche allumé.gif" width="100" height="110">Votre panier vous remercie <img src="./image_site/emoji_contant.gif" width="40" height="40"> <img src="./image_site/Torche allumé.gif" width="100" height="110"></h5>';
             echo '<form method="POST">';
             foreach($_SESSION['panier'] as $nolivre) {
                 echo '<input type="hidden" name="nolivre[]" value="'. $nolivre .'">';

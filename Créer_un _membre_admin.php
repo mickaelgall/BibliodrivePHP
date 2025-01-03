@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer un Membre</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Créer un Membre outil admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Créer un Membre outil admin</h1>
+        <h1 class="couleur1">créer un membre : <img src=".\image_site\pioche_minecraft_diament.jpg" width="55" height="55"></h1>
 
         <?php
         require_once 'connexion.php'; // Inclure le fichier de connexion à la base de données
@@ -79,7 +80,7 @@
             <div class="mb-3">
                 <input type="text" class="form-control" id="profil" name="profil" placeholder="Profil" required>
             </div>
-            <button type="submit" class="btn btn-primary">Créer un membre</button>
+            <button type="submit" class="btn btn-warning">Créer le membre</button>
         </form>
     </div>
 </body>
