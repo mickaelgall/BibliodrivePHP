@@ -4,7 +4,7 @@
 
 try {
 
-$dns = 'mysql:host=localhost;dbname=bibliodrivemicka'; // dbname : nom de la base
+$dns = 'mysql:host=localhost;dbname=bibliodrive'; // dbname : nom de la base
 $utilisateur = 'root'; // root sur vos postes
 $motDePasse = ''; // pas de mot de passe sur vos postes
 $connexion = new PDO( $dns, $utilisateur, $motDePasse );
