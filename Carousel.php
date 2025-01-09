@@ -21,7 +21,7 @@ $livres = $stmt->fetchAll();
     <?php foreach ($livres as $id => $livre): ?>
       <div class="carousel-item <?= $id == 0 ? 'active' : '' ?>">
         <div class="d-flex justify-content-center">
-          <img src="./images/<?= $livre->photo ?>" alt="<?= $livre->titre ?>" class="d-block" style="width:70%">
+          <img src="./images/<?= $livre->photo ?>" alt="<?= $livre->titre ?>" class="d-block" style="width:50%">
         </div>
       </div>
     <?php endforeach; ?>
