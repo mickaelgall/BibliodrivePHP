@@ -51,9 +51,8 @@
             } else {
                 echo "<div class='alert alert-danger'>Tous les champs sont obligatoires.</div>";
             }
-        }
+        }                                                        
         ?>
-
         <form action="" method="post">
             <div class="mb-3">                                              
                 <input type="email" class="form-control" id="mel" name="mel" placeholder="Email" required>
@@ -80,7 +79,7 @@
                 <input type="text" class="form-control" id="profil" name="profil" placeholder="Profil" required>
             </div>
             <button type="submit" class="btn btn-warning">Créer le membre</button>
-        </form
+        </form>
     </div>
 </body>
 </html>

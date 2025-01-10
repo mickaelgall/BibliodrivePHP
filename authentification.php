@@ -1,10 +1,10 @@
 <?php
- // Démarre la temporisation de sortie pour éviter les problèmes de header
+
 
 if (!isset($_SESSION["mel"])) {
     if (!isset($_POST['btnconnexion'])) { 
-        ?>
-        <form method="post"class="couleur1">
+        ?> <!--affiche la connexion -->
+        <form method="post"class="couleur1"> 
             <h5>votre mail:</h5><input name="mel" class="form-control" type="text">
             <h5>votre Mot de passe:</h5><input name="motdepasse" class="form-control" type="text">
             <div class="text-center">
@@ -16,16 +16,16 @@ if (!isset($_SESSION["mel"])) {
         <?php
     } else {
         require_once 'connexion.php';
-        $mel = $_POST['mel'];
+        $mel = $_POST['mel']; // verifie les informations
         $motdepasse = $_POST['motdepasse'];
-
+// prépare l'instruction.
         $stmt = $connexion->prepare("SELECT * FROM utilisateur WHERE mel=:mel AND motdepasse=:motdepasse");
         $stmt->bindValue(":mel", $mel); 
         $stmt->bindValue(":motdepasse", $motdepasse); 
         $stmt->setFetchMode(PDO::FETCH_OBJ);
         $stmt->execute();
         $enregistrement = $stmt->fetch(); 
-
+//verifie les information
         if ($enregistrement) { 
             $_SESSION["mel"] = $mel;
             $_SESSION["prenom"] = $enregistrement->prenom;
@@ -48,7 +48,7 @@ if (!isset($_SESSION["mel"])) {
         }
     }
 } else {
-    ?>
+    ?><!--affiche les données du client -->
     <h3 class="text-center couleur1"><?php echo $_SESSION["prenom"] . ' ' . $_SESSION["nom"]; ?></h3>
     <h3 class="text-center couleur1"><?php echo $_SESSION["mel"]; ?></h3>
     <br>
@@ -72,10 +72,10 @@ if (!isset($_SESSION["mel"])) {
     <?php } else {
         session_unset();         
         session_destroy();
-        header("Location: accueil.php");
+        header("Location: accueil.php"); // en client et admin re dirige a l'accueil client apres la deconnexion
         exit();
     }
 }
 
-ob_end_flush(); // Envoie la sortie tamponnée au navigateur et arrête la temporisation de sortie
+ob_end_flush(); // mes fin a la fonction active la mise en mémoire tampon de la sortie jusqu'a la deconnexion du client
 ?>

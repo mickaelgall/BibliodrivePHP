@@ -1,6 +1,6 @@
 <?php
 session_start();
-ob_start(); // Démarre la temporisation de sortie pour éviter les problèmes de header
+ob_start(); // Cette fonction active la mise en mémoire tampon de la sortie jusqu'a la deconnexion du client
 ?>
 <!DOCTYPE html>
 <html lang="fr">
