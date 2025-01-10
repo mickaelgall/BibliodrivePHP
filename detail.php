@@ -13,7 +13,7 @@ require_once('connexion.php');
 $stmt = $connexion->prepare("SELECT nom, prenom, dateretour, detail, isbn13, anneeparution, photo, titre FROM livre INNER JOIN auteur ON (livre.noauteur = auteur.noauteur) LEFT OUTER JOIN emprunter ON (livre.nolivre = emprunter.nolivre) where livre.nolivre=:nolivre");
 $nolivre = $_GET["nolivre"];
 $stmt->bindValue(":nolivre", $nolivre); // préparer l'instruction
-$stmt->setFetchMode(PDO::FETCH_OBJ); //manipule la donnée
+$stmt->setFetchMode(PDO::FETCH_OBJ); //verifie les infos de la base de données
 
 $stmt->execute();
 $enregistrement = $stmt->fetch();

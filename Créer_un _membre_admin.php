@@ -42,7 +42,7 @@
                         echo "<div class='alert alert-success' id='successMessage'>Membre créé avec succès !</div>";
                         header("Refresh:3");
                     } else {
-                        $erreurs = $stmt->errorInfo();
+                        $erreurs = $stmt->errorInfo(); // A CHANGER
                         echo "<div class='alert alert-danger'>Erreur lors de la création du membre : " . $erreurs[2] . "</div>";
                     }
                 } catch (PDOException $e) { // traite les erreurs

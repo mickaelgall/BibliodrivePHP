@@ -16,7 +16,7 @@ ob_start(); // Cette fonction active la mise en mémoire tampon de la sortie jus
 </head>
 <div class="container">
 
-<div class="row">
+<div class=s"row">
   <!-- début haut gauche-->
   <div class="col-sm-9">
   <?php 

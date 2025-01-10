@@ -26,7 +26,7 @@
             $stmt = $connexion->prepare("INSERT INTO livre (noauteur, titre, isbn13, anneeparution, detail, photo, dateajout) 
             VALUES (:noauteur, :titre, :isbn13, :anneeparution, :detail, :photo, :dateajout)");
 // Préparer la requête d'insertion
-            $stmt->bindParam(':noauteur', $noauteur);//récupere la valeur
+            $stmt->bindParam(':noauteur', $noauteur);
             $stmt->bindParam(':titre', $titre);
             $stmt->bindParam(':isbn13', $isbn13);
             $stmt->bindParam(':anneeparution', $anneeparution);
@@ -43,7 +43,7 @@
         }
 
         $stmt_auteurs = $connexion->prepare("SELECT noauteur, nom FROM auteur");
-        $stmt_auteurs->execute();
+        $stmt_auteurs->execute(); //A CHANGER
         $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC); // verifie si il en manque
         ?>
         

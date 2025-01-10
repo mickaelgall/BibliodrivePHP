@@ -1,7 +1,7 @@
 <?php
    if(!isset($_SESSION['panier'])){
        // Initialisation du panier
-       $_SESSION['panier'] = array();
+       $_SESSION['panier'] = array(); // regroupe les informations
     }
    ?>
    <h1 id='panier'class="couleur3">Votre panier <img src="./image_site/Livre_minecraft.jpg" width="50" height="50"></h1>  
@@ -30,9 +30,9 @@
             echo '</form>';
         }
 // bouton annuler
-            if(isset($_POST['annuler'])){
+            if(isset($_POST['annuler'])){  //A CHANGER
                 unset($_SESSION['panier'][array_search($_SESSION['panier'][$id], $_SESSION['panier'])]);
-                sort($_SESSION['panier']);
+                sort($_SESSION['panier']); //A CHANGER
                 header("refresh: 0");
               }
 // bouton valider
@@ -48,7 +48,8 @@
               // Requête pour ajouter les informations du livre dans la base de données SQL
               try {
                   $stmt = $connexion->prepare("INSERT INTO emprunter(mel, nolivre, dateemprunt) VALUES (:mel, :nolivre, :dateemprunt)");
-                  $stmt->bindValue(':mel', $mel, PDO::PARAM_STR); //Associe une valeur à un nom correspondant a la requête SQL qui a été utilisé pour la requête
+                  //Associe la meme valeur du nom de la requête SQL qui est utilisé pour la requête
+                  $stmt->bindValue(':mel', $mel, PDO::PARAM_STR); 
                   $stmt->bindValue(':dateemprunt', $dateemprunt, PDO::PARAM_STR);
                   $stmt->bindValue(':nolivre', $nolivre, PDO::PARAM_STR);
                   $stmt->execute();
