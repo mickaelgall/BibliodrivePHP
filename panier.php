@@ -8,7 +8,6 @@
    <?php 
         
         // Affichage du panier 
-
           $nb_livresempruntés = count($_SESSION['panier']); 
           $nb_emprunts = (5 - $nb_livresempruntés);
           echo '<h5 class="couleur1" id="reste">(Il vous reste ', $nb_emprunts ,' réservations possibles.)</h5>';
@@ -24,7 +23,7 @@
         } else { //messsage quand le panier est remplie
             echo '<h5  class="couleur2" id="rempli"><img src="./image_site/Torche allumé.gif" width="100" height="110">Votre panier vous remercie <img src="./image_site/emoji_contant.gif" width="40" height="40"> <img src="./image_site/Torche allumé.gif" width="100" height="110"></h5>';
             echo '<form method="POST">';
-            foreach($_SESSION['panier'] as $nolivre) {
+            foreach($_SESSION['panier'] as $nolivre) { // parcour tous les livres dans le tableau le panier
                 echo '<input type="hidden" name="nolivre[]" value="'. $nolivre .'">';
             }
             echo '<input type="submit" name="valider" class="btn btn-success btn-lg" value="Valider le panier">';
@@ -44,7 +43,6 @@
       
           foreach($_SESSION['panier'] as $nolivre) { // parcour tous les livres dans le tableau le panier
       
-
               echo "Tentative d'ajout du livre: $nolivre<br>";
       
               // Requête pour ajouter les informations du livre dans la base de données SQL
@@ -55,7 +53,8 @@
                   $stmt->bindValue(':nolivre', $nolivre, PDO::PARAM_STR);
                   $stmt->execute();
                   echo "Le livre $nolivre a été ajouté avec succès.<br>";
-              } catch (PDOException $e) {
+              
+                } catch (PDOException $e) { 
                   echo "Erreur lors de l'ajout du livre $nolivre: " . $e->getMessage() . "<br>";
               }
           }

@@ -1,7 +1,6 @@
 <?php
 
-
-if (!isset($_SESSION["mel"])) {
+if (!isset($_SESSION["mel"])) { //verification si la variable est définie
     if (!isset($_POST['btnconnexion'])) { 
         ?> <!--affiche la connexion -->
         <form method="post"class="couleur1"> 
@@ -25,7 +24,7 @@ if (!isset($_SESSION["mel"])) {
         $stmt->setFetchMode(PDO::FETCH_OBJ); //verifie les infos de la base de données
         $stmt->execute();
         $enregistrement = $stmt->fetch(); //manipule la requete
-//verifie les information
+//récupere les information
         if ($enregistrement) { 
             $_SESSION["mel"] = $mel;
             $_SESSION["prenom"] = $enregistrement->prenom;
@@ -35,7 +34,7 @@ if (!isset($_SESSION["mel"])) {
             $_SESSION["ville"] = $enregistrement->ville;
             $_SESSION["profil"] = $enregistrement->profil;
 
-            // Récupére les données du formulaire
+
             if ($_SESSION["profil"] === "admin") {
                 header("Location: accueil_admin.php"); 
             } else {

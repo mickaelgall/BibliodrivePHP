@@ -10,11 +10,11 @@
 require_once('connexion.php');
 $stmt = $connexion->prepare("SELECT nolivre, titre, anneeparution FROM livre INNER JOIN auteur ON (livre.noauteur = auteur.noauteur) where auteur.nom=:nom ORDER BY anneeparution");
 $nom = $_POST["rchAuteur"];
-$stmt->bindValue(":nom", $nom); // pas de troisième paramètre STR par défaut
-$stmt->setFetchMode(PDO::FETCH_OBJ);
-// Les résultats retournés par la requête seront traités en 'mode' objet
+$stmt->bindValue(":nom", $nom); //Associe une valeur dans la requete sql
+$stmt->setFetchMode(PDO::FETCH_OBJ);//verifie les infos de la base de données
+
 $stmt->execute();
-while($enregistrement = $stmt->fetch())
+while($enregistrement = $stmt->fetch()) //manipule la donnée
 {
 echo '<h1>',"<a  class=couleur1 href='page_detail.php?nolivre=".$enregistrement->nolivre."'>".$enregistrement->titre, ' ', ' ', '(', $enregistrement->anneeparution, ')', "</a>",'</h1>';
 }

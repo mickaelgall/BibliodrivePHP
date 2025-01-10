@@ -26,7 +26,7 @@
             $stmt = $connexion->prepare("INSERT INTO livre (noauteur, titre, isbn13, anneeparution, detail, photo, dateajout) 
             VALUES (:noauteur, :titre, :isbn13, :anneeparution, :detail, :photo, :dateajout)");
 // Préparer la requête d'insertion
-            $stmt->bindParam(':noauteur', $noauteur);
+            $stmt->bindParam(':noauteur', $noauteur);//récupere la valeur
             $stmt->bindParam(':titre', $titre);
             $stmt->bindParam(':isbn13', $isbn13);
             $stmt->bindParam(':anneeparution', $anneeparution);
@@ -46,11 +46,11 @@
         $stmt_auteurs->execute();
         $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC); // verifie si il en manque
         ?>
-<!-- prend les livre un par un-->
+        
         <form action="" method="post">
             <div class="mb-3">
                 <select class="form-control" id="noauteur" name="noauteur" required>
-                    <?php foreach ($auteurs as $auteur): ?>
+                    <?php foreach ($auteurs as $auteur): ?> <!--parcour tous les livres dans le tableau-->
                         <option value="<?= $auteur['noauteur']; ?>"><?= $auteur['nom']; ?></option>
                     <?php endforeach; ?>
                 </select>

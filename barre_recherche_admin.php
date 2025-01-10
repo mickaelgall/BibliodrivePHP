@@ -2,7 +2,7 @@
 
 Vous ètes a l'espace administrateur, je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
     <br> <!--espace de ligne-->
-    Le site est en maintenance jusqu'au 10 janvier 2025, merci de votre visite.
+    Le site est en maintenance jusqu'a une durée inderterminée, merci de votre visite.
     <nav class="navbar navbar-expand-sm navbar-dark bg-warning form-control me-2">
       <div class="container-fluid">
         <a class="navbar-brand text-dark" href="http://127.0.0.1/PHP/BibliodrivePHP/accueil_admin.php">accueil administrateur<img src=".\image_site\table-enchantement-minecraft.jpg" alt="bibliothèque " width="50" height="50"></a>

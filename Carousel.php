@@ -12,13 +12,14 @@ $livres = $stmt->fetchAll();
 
 <div id="demo" class="carousel slide carousel-fade carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators ">
-    <?php for ($i = 0; $i < count($livres); $i++): ?><!--Récupére les données du formulaire-->
+    <?php for ($i = 0; $i < count($livres); $i++): ?><!--Récupére les données-->
       <button type="button" data-bs-target="#demo" data-bs-slide-to="<?= $i ?>" class="<?= $i == 0 ? 'active' : '' ?>"></button>
     <?php endfor; ?>
   </div>
 
+  <!-- affiche l'image-->
   <div class="carousel-inner">
-    <?php foreach ($livres as $id => $livre): ?>
+    <?php foreach ($livres as $id => $livre): ?> <!--parcour le tableau-->
       <div class="carousel-item <?= $id == 0 ? 'active' : '' ?>">
         <div class="d-flex justify-content-center">
           <img src="./images/<?= $livre->photo ?>" alt="<?= $livre->titre ?>" class="d-block" style="width:50%">
