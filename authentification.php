@@ -20,11 +20,11 @@ if (!isset($_SESSION["mel"])) {
         $motdepasse = $_POST['motdepasse'];
 // prépare l'instruction.
         $stmt = $connexion->prepare("SELECT * FROM utilisateur WHERE mel=:mel AND motdepasse=:motdepasse");
-        $stmt->bindValue(":mel", $mel); 
+        $stmt->bindValue(":mel", $mel); //lie mel au php
         $stmt->bindValue(":motdepasse", $motdepasse); 
-        $stmt->setFetchMode(PDO::FETCH_OBJ);
+        $stmt->setFetchMode(PDO::FETCH_OBJ); //verifie les infos de la base de données
         $stmt->execute();
-        $enregistrement = $stmt->fetch(); 
+        $enregistrement = $stmt->fetch(); //manipule la requete
 //verifie les information
         if ($enregistrement) { 
             $_SESSION["mel"] = $mel;
@@ -35,10 +35,11 @@ if (!isset($_SESSION["mel"])) {
             $_SESSION["ville"] = $enregistrement->ville;
             $_SESSION["profil"] = $enregistrement->profil;
 
+            // Récupére les données du formulaire
             if ($_SESSION["profil"] === "admin") {
-                header("Location: accueil_admin.php"); // Redirection vers la page admin
+                header("Location: accueil_admin.php"); 
             } else {
-                header("Location: accueil.php"); // Redirection vers la page client
+                header("Location: accueil.php"); 
             }
             exit();
         } else { 
@@ -48,7 +49,7 @@ if (!isset($_SESSION["mel"])) {
         }
     }
 } else {
-    ?><!--affiche les données du client -->
+    ?>
     <h3 class="text-center couleur1"><?php echo $_SESSION["prenom"] . ' ' . $_SESSION["nom"]; ?></h3>
     <h3 class="text-center couleur1"><?php echo $_SESSION["mel"]; ?></h3>
     <br>

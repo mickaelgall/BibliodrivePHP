@@ -14,7 +14,7 @@
         <?php
         require_once 'connexion.php';
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") { // Récupére les données du formulaire du tableau associatif
             $noauteur = $_POST['noauteur'];
             $titre = $_POST['titre'];
             $isbn13 = $_POST['isbn13'];
@@ -25,7 +25,7 @@
 
             $stmt = $connexion->prepare("INSERT INTO livre (noauteur, titre, isbn13, anneeparution, detail, photo, dateajout) 
             VALUES (:noauteur, :titre, :isbn13, :anneeparution, :detail, :photo, :dateajout)");
-
+// Préparer la requête d'insertion
             $stmt->bindParam(':noauteur', $noauteur);
             $stmt->bindParam(':titre', $titre);
             $stmt->bindParam(':isbn13', $isbn13);
@@ -44,9 +44,9 @@
 
         $stmt_auteurs = $connexion->prepare("SELECT noauteur, nom FROM auteur");
         $stmt_auteurs->execute();
-        $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC);
+        $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC); // verifie si il en manque
         ?>
-
+<!-- prend les livre un par un-->
         <form action="" method="post">
             <div class="mb-3">
                 <select class="form-control" id="noauteur" name="noauteur" required>
@@ -54,7 +54,7 @@
                         <option value="<?= $auteur['noauteur']; ?>"><?= $auteur['nom']; ?></option>
                     <?php endforeach; ?>
                 </select>
-            </div>
+            </div> <!-- affiche le formulaire-->
             <div class="mb-3">
                 <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre" required>
             </div>

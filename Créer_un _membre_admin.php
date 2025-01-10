@@ -45,8 +45,8 @@
                         $erreurs = $stmt->errorInfo();
                         echo "<div class='alert alert-danger'>Erreur lors de la création du membre : " . $erreurs[2] . "</div>";
                     }
-                } catch (PDOException $e) {
-                    echo "<div class='alert alert-danger'>Erreur : " . $e->getMessage() . "</div>";// renvoie une description de l'erreur ou du comportement qui a provoqué l'erreur
+                } catch (PDOException $e) { // traite les erreurs
+                    echo "<div class='alert alert-danger'>Erreur : " . $e->getMessage() . "</div>";
                 }
             } else {
                 echo "<div class='alert alert-danger'>Tous les champs sont obligatoires.</div>";

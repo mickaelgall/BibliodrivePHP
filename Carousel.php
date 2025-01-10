@@ -12,7 +12,7 @@ $livres = $stmt->fetchAll();
 
 <div id="demo" class="carousel slide carousel-fade carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators ">
-    <?php for ($i = 0; $i < count($livres); $i++): ?>
+    <?php for ($i = 0; $i < count($livres); $i++): ?><!--Récupére les données du formulaire-->
       <button type="button" data-bs-target="#demo" data-bs-slide-to="<?= $i ?>" class="<?= $i == 0 ? 'active' : '' ?>"></button>
     <?php endfor; ?>
   </div>
