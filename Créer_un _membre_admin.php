@@ -14,8 +14,7 @@
         <?php
         require_once 'connexion.php'; // Inclure le fichier de connexion à la base de données
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Récupérer les données du formulaire
+        if ($_SERVER["REQUEST_METHOD"] == "POST") { // Récupére les données du formulaire
             $mel = $_POST['mel'];
             $motdepasse = $_POST['motdepasse'];
             $nom = $_POST['nom'];
@@ -47,7 +46,7 @@
                         echo "<div class='alert alert-danger'>Erreur lors de la création du membre : " . $erreurs[2] . "</div>";
                     }
                 } catch (PDOException $e) {
-                    echo "<div class='alert alert-danger'>Erreur : " . $e->getMessage() . "</div>";
+                    echo "<div class='alert alert-danger'>Erreur : " . $e->getMessage() . "</div>";// renvoie une description de l'erreur ou du comportement qui a provoqué l'erreur
                 }
             } else {
                 echo "<div class='alert alert-danger'>Tous les champs sont obligatoires.</div>";
@@ -56,7 +55,7 @@
         ?>
 
         <form action="" method="post">
-            <div class="mb-3">
+            <div class="mb-3">                                              
                 <input type="email" class="form-control" id="mel" name="mel" placeholder="Email" required>
             </div>
             <div class="mb-3">
@@ -81,7 +80,7 @@
                 <input type="text" class="form-control" id="profil" name="profil" placeholder="Profil" required>
             </div>
             <button type="submit" class="btn btn-warning">Créer le membre</button>
-        </form>
+        </form
     </div>
 </body>
 </html>

@@ -49,18 +49,18 @@ if (!isset($_SESSION["mel"])) {
     }
 } else {
     ?>
-    <h3 class="text-center"><?php echo $_SESSION["prenom"] . ' ' . $_SESSION["nom"]; ?></h3>
-    <h3 class="text-center"><?php echo $_SESSION["mel"]; ?></h3>
+    <h3 class="text-center couleur1"><?php echo $_SESSION["prenom"] . ' ' . $_SESSION["nom"]; ?></h3>
+    <h3 class="text-center couleur1"><?php echo $_SESSION["mel"]; ?></h3>
     <br>
-    <h3 class="text-center"><?php echo $_SESSION["adresse"]; ?></h3>
-    <h3 class="text-center"><?php echo $_SESSION["codepostal"] . ', ' . $_SESSION["ville"]; ?></h3>
+    <h3 class="text-center couleur2"><?php echo $_SESSION["adresse"]; ?></h3>
+    <h3 class="text-center couleur2"><?php echo $_SESSION["codepostal"] . ', ' . $_SESSION["ville"]; ?></h3>
     
     <?php if ($_SESSION["profil"] === "client"): ?>
-        <br><h4 class="text-center">Bienvenue client </h4>
+        <br><h4 class="text-center couleur3">Bienvenue client </h4>
     <?php endif; ?>
     
     <?php if ($_SESSION["profil"] === "admin"): ?>
-        <br><h4 class="text-center">Bienvenue administrateur </h4>
+        <br><h4 class="text-center couleur3">Bienvenue administrateur </h4>
     <?php endif; ?>
     
     <?php if (!isset($_POST['deco'])) { ?>

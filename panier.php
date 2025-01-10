@@ -19,9 +19,9 @@
             echo '</form></p>';
           } 
           
-          if (empty($_SESSION['panier'])){
+          if (empty($_SESSION['panier'])){ //messsage quand le panier est vide
             echo '<h5 class="couleur2" id="vide"><img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150">Votre panier est triste sans lumière <img src="./image_site/Emoji_triste.gif" width="40" height="40"> ajouter un livre !<img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150"></h5>';
-        } else {
+        } else { //messsage quand le panier est remplie
             echo '<h5  class="couleur2" id="rempli"><img src="./image_site/Torche allumé.gif" width="100" height="110">Votre panier vous remercie <img src="./image_site/emoji_contant.gif" width="40" height="40"> <img src="./image_site/Torche allumé.gif" width="100" height="110"></h5>';
             echo '<form method="POST">';
             foreach($_SESSION['panier'] as $nolivre) {
@@ -30,15 +30,13 @@
             echo '<input type="submit" name="valider" class="btn btn-success btn-lg" value="Valider le panier">';
             echo '</form>';
         }
-         /* Requête permettant de supprimer un contenu du panier en cliquant 
-            sur le bouton 'annuler' */
-
+// bouton annuler
             if(isset($_POST['annuler'])){
                 unset($_SESSION['panier'][array_search($_SESSION['panier'][$id], $_SESSION['panier'])]);
                 sort($_SESSION['panier']);
                 header("refresh: 0");
               }
-
+// bouton valider
         if(isset($_POST['valider'])){
           require_once('connexion.php');
           $mel = $_SESSION['mel'];
@@ -46,8 +44,6 @@
       
           // Boucle sur tous les livres dans le panier
           foreach($_SESSION['panier'] as $nolivre) {
-              // Enlever les espaces blancs
-              $nolivre = trim($nolivre);
       
               // Afficher la valeur de $nolivre pour débogage
               echo "Tentative d'ajout du livre: $nolivre<br>";
