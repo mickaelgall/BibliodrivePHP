@@ -14,7 +14,7 @@
         <?php
         require_once 'connexion.php'; // Inclure le fichier de connexion à la base de données
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") { // Récupére les données du formulaire
+        if (isset($_POST['bouton'])) {
             $mel = $_POST['mel'];
             $motdepasse = $_POST['motdepasse'];
             $nom = $_POST['nom'];
@@ -78,7 +78,7 @@
             <div class="mb-3">
                 <input type="text" class="form-control" id="profil" name="profil" placeholder="Profil" required>
             </div>
-            <button type="submit" class="btn btn-warning">Créer le membre</button>
+            <button type="submit" name="bouton" class="btn btn-warning">Créer le membre</button>
         </form>
     </div>
 </body>

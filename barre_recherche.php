@@ -5,7 +5,7 @@ Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
     Le site est en maintenance jusqu'a une durée inderterminée, merci de votre visite.
     <nav class="navbar navbar-expand-sm navbar-dark bg-danger form-control me-2">
       <div class="container-fluid">
-        <a class="navbar-brand" href="http://127.0.0.1/PHP/BibliodrivePHP/accueil.php">accueil<img src=".\image_site\table-enchantement-minecraft.jpg" alt="bibliothèque " width="50" height="50"></a>
+        <a class="navbar-brand" href="http://127.0.0.1/PHP/BibliodrivePHP/accueil.php">accueil<img src=".\image_site\Enchanting_Table.gif" alt="bibliothèque " width="55" height="55"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,7 +16,7 @@ Bonjour je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
             </li>
           <form class="d-flex" action="page_liste_livres.php" method="post">
             <input class="form-control me-2" type="text" placeholder="chercher un auteur" name="rchAuteur" >
-            <button class="btn btn-light"  type="submit">rechercher</button>
+            <button class="btn btn-light"  type="submit">rechercher </button>
           </form>
         </div>
       </div>

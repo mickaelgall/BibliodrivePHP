@@ -13,7 +13,7 @@
        <?php
         require_once 'connexion.php';
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") { // Récupére les données du formulaire du tableau associatif
+        if (isset($_POST['bouton'])) { { // Récupére les données du formulaire du tableau associatif
             $noauteur = $_POST['noauteur'];
             $titre = $_POST['titre'];
             $isbn13 = $_POST['isbn13'];
@@ -40,7 +40,7 @@
                 echo "<div class='alert alert-danger'>Erreur lors de l'ajout du livre.</div>";
             }
         }
-
+    }
         $stmt_auteurs = $connexion->prepare("SELECT noauteur, nom FROM auteur");
         $stmt_auteurs->execute(); //A CHANGER
         $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC); // verifie si il en manque
@@ -69,7 +69,7 @@
             <div class="mb-3">
                 <input type="text" class="form-control" id="photo" name="photo" placeholder="Nom de Fichier Photo" required>
             </div>
-            <button type="submit" class="btn btn-warning">Ajouter le livre</button>
+            <button type="submit" name="bouton" class="btn btn-warning">Ajouter le livre</button>
             
         </form>
     </div>

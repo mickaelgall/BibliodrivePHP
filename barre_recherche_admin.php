@@ -5,7 +5,7 @@ Vous êtes à l'espace administrateur, je m'appelle Mickaël Gall, bienvenue dan
     Le site est en maintenance jusqu'a une durée inderterminée, merci de votre visite.
     <nav class="navbar navbar-expand-sm navbar-dark bg-warning form-control me-2">
       <div class="container-fluid">
-        <a class="navbar-brand text-dark" href="http://127.0.0.1/PHP/BibliodrivePHP/accueil_admin.php">accueil administrateur<img src=".\image_site\table-enchantement-minecraft.jpg" alt="bibliothèque " width="50" height="50"></a>
+        <a class="navbar-brand text-dark" href="http://127.0.0.1/PHP/BibliodrivePHP/accueil_admin.php">accueil administrateur<img src=".\image_site\Enchanting_Table.gif" alt="bibliothèque " width="55" height="55"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
