@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ajouter un auteur outil admin</title>
+    <title>créer un auteur outil admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
@@ -13,12 +13,10 @@
 
         <?php
         require_once 'connexion.php'; // Inclure le fichier de connexion à la base de données
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") { // Récupére les données du formulaire
+        if (isset($_POST['bouton'])) {
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
-  
-
+           
             if ($prenom& $nom && $prenom) {
                 // Préparer la requête d'insertion
                 $stmt = $connexion->prepare("INSERT INTO auteur (nom, prenom) VALUES (:nom, :prenom)");
@@ -41,16 +39,16 @@
             } else {
                 echo "<div class='alert alert-danger'>Tous les champs sont obligatoires.</div>";
             }
-        }                                                        
+        }                                            
         ?>
         <form action="" method="post">
             <div class="mb-3">
                 <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" required>
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" required>
+                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prénom" required>
             </div>
-            <button type="submit" class="btn btn-warning">Ajouter l'auteur</button>
+            <button type="submit" name="bouton" class="btn btn-warning">Ajouter l'auteur</button>
         </form>
     </div>
 </body>

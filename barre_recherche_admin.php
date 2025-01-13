@@ -1,6 +1,6 @@
 
 
-Vous ètes a l'espace administrateur, je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
+Vous êtes à l'espace administrateur, je m'appelle Mickaël Gall, bienvenue dans ma bibliodrive !
     <br> <!--espace de ligne-->
     Le site est en maintenance jusqu'a une durée inderterminée, merci de votre visite.
     <nav class="navbar navbar-expand-sm navbar-dark bg-warning form-control me-2">

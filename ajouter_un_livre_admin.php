@@ -45,9 +45,9 @@
         $stmt_auteurs->execute(); //A CHANGER
         $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC); // verifie si il en manque
         ?>
-            <a class="btn btn-success" href="page_ajouter_auteur.php">ajouter un auteur <img src=".\image_site\pioche_en_fer.jpg" width="35" height="35"></a>
             <form action="" method="post">
             <div class="mb-3">
+            <a class="btn btn-success" href="page_ajouter_auteur.php">ajouter un auteur <img src=".\image_site\pioche_en_fer.jpg" width="35" height="35"></a>           
             <select class="form-control" id="noauteur" name="noauteur" required>
                     <?php foreach ($auteurs as $auteur): ?> <!--parcour tous les livres dans le tableau-->
                         <option value="<?= $auteur['noauteur']; ?>"><?= $auteur['nom']; ?></option> 
