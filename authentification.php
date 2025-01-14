@@ -5,7 +5,7 @@ if (!isset($_SESSION["mel"])) { //verification si la variable est définie
         ?> <!--affiche la connexion -->
         <form method="post"class="couleur1"> 
             <h5>votre mail:</h5><input name="mel" class="form-control" type="text">
-            <h5>votre Mot de passe:</h5><input name="motdepasse" class="form-control" type="text">
+            <h5>votre Mot de passe:</h5><input name="motdepasse" class="form-control" type="password">
             <div class="text-center">
                 <input type="submit" class="btn btn-success" name="btnconnexion" value="Connexion">
                 <br>

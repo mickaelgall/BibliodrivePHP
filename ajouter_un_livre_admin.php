@@ -13,7 +13,7 @@
        <?php
         require_once 'connexion.php';
 
-        if (isset($_POST['bouton'])) { {
+        if (isset($_POST['bouton'])) { {//vérifie la variable 
             $noauteur = $_POST['noauteur'];
             $titre = $_POST['titre'];
             $isbn13 = $_POST['isbn13'];
@@ -24,7 +24,8 @@
 
             $stmt = $connexion->prepare("INSERT INTO livre (noauteur, titre, isbn13, anneeparution, detail, photo, dateajout) 
             VALUES (:noauteur, :titre, :isbn13, :anneeparution, :detail, :photo, :dateajout)");
-// Prépare la requête d'insertion
+            
+            //lie un paramètre à un nom de variable
             $stmt->bindParam(':noauteur', $noauteur);
             $stmt->bindParam(':titre', $titre);
             $stmt->bindParam(':isbn13', $isbn13);

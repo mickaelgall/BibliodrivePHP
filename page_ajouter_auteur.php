@@ -7,7 +7,7 @@ ob_start(); // Cette fonction active la mise en mémoire tampon de la sortie jus
 <html lang="fr">
 <head>
 <link rel="stylesheet" type="text/css" href="style.css"/>
-<title>ajouter un livre outil admin</title>
+<title>ajouter un auteur outil admin</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
