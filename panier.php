@@ -11,6 +11,7 @@
           $nb_livresempruntés = count($_SESSION['panier']); 
           $nb_emprunts = (5 - $nb_livresempruntés);
           echo '<h5 class="couleur1" id="reste">(Il vous reste ', $nb_emprunts ,' réservations possibles.)</h5>';
+          
           for ($id =0 ;$id < $nb_livresempruntés; $id++){ // initialise et poursuit l'exécution pour compter le nombre de livre 
             echo '<form method="POST">'; //transmet les information
             echo '<p id="contenupanier">', $_SESSION['panier'][$id];
@@ -19,10 +20,13 @@
           } 
           
           if (empty($_SESSION['panier'])){ //verifie si la session est considérée comme vide
+           
             echo '<h5 class="couleur2" id="vide"><img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150">Votre panier est triste sans lumière <img src="./image_site/Emoji_triste.gif" width="40" height="40"> ajouter un livre !<img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150"></h5>';
         } else { //messsage quand le panier est remplie
-            echo '<h5  class="couleur2" id="rempli"><img src="./image_site/Torche allumé.gif" width="100" height="110">Votre panier vous remercie <img src="./image_site/emoji_contant.gif" width="40" height="40"> <img src="./image_site/Torche allumé.gif" width="100" height="110"></h5>';
+            
+          echo '<h5  class="couleur2" id="rempli"><img src="./image_site/Torche allumé.gif" width="100" height="110">Votre panier vous remercie <img src="./image_site/emoji_contant.gif" width="40" height="40"> <img src="./image_site/Torche allumé.gif" width="100" height="110"></h5>';
             echo '<form method="POST">';
+            
             foreach($_SESSION['panier'] as $nolivre) { // parcour tous les livres dans le tableau le panier
                 echo '<input type="hidden" name="nolivre[]" value="'. $nolivre .'">';
             }
@@ -30,9 +34,9 @@
             echo '</form>';
         }
 // bouton annuler
-            if(isset($_POST['annuler'])){  //A CHANGER
+            if(isset($_POST['annuler'])){  
                 unset($_SESSION['panier'][array_search($_SESSION['panier'][$id], $_SESSION['panier'])]);
-                sort($_SESSION['panier']); //A CHANGER
+                sort($_SESSION['panier']); 
                 header("refresh: 0");
               }
 // bouton valider

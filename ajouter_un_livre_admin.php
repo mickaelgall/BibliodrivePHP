@@ -13,7 +13,7 @@
        <?php
         require_once 'connexion.php';
 
-        if (isset($_POST['bouton'])) { { // Récupére les données du formulaire du tableau associatif
+        if (isset($_POST['bouton'])) { {
             $noauteur = $_POST['noauteur'];
             $titre = $_POST['titre'];
             $isbn13 = $_POST['isbn13'];
@@ -42,17 +42,23 @@
         }
     }
         $stmt_auteurs = $connexion->prepare("SELECT noauteur, nom FROM auteur");
-        $stmt_auteurs->execute(); //A CHANGER
-        $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC); // verifie si il en manque
+        $stmt_auteurs->execute(); 
+        $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC); // 
         ?>
             <form action="" method="post">
             <div class="mb-3">
+            <!-- liste deroulante-->  
             <a class="btn btn-success" href="page_ajouter_auteur.php">ajouter un auteur <img src=".\image_site\pioche_en_fer.jpg" width="35" height="35"></a>           
+           
             <select class="form-control" id="noauteur" name="noauteur" required>
-                    <?php foreach ($auteurs as $auteur): ?> <!--parcour tous les livres dans le tableau-->
-                        <option value="<?= $auteur['noauteur']; ?>"><?= $auteur['nom']; ?></option> 
+                    
+            <?php foreach ($auteurs as $auteur): ?> 
+                        
+                <option value="<?= $auteur['noauteur']; ?>"><?= $auteur['nom']; ?></option> 
                     <?php endforeach; ?>
+               
                 </select>
+            
             </div> <!-- affiche le formulaire-->
             <div class="mb-3">
                 <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre" required> 

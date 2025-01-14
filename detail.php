@@ -12,8 +12,8 @@
 require_once('connexion.php'); 
 $stmt = $connexion->prepare("SELECT nom, prenom, dateretour, detail, isbn13, anneeparution, photo, titre FROM livre INNER JOIN auteur ON (livre.noauteur = auteur.noauteur) LEFT OUTER JOIN emprunter ON (livre.nolivre = emprunter.nolivre) where livre.nolivre=:nolivre");
 $nolivre = $_GET["nolivre"];
-$stmt->bindValue(":nolivre", $nolivre); // préparer l'instruction
-$stmt->setFetchMode(PDO::FETCH_OBJ); //verifie les infos de la base de données
+$stmt->bindValue(":nolivre", $nolivre); 
+$stmt->setFetchMode(PDO::FETCH_OBJ); //dévini en mode objet
 
 $stmt->execute();
 $enregistrement = $stmt->fetch();
@@ -38,8 +38,8 @@ echo $enregistrement->detail;
 <div class="col-sm-4">
 <img src="./images/<?php echo $enregistrement->photo; ?>" class="d-block w-100" alt="Image de couverture"> <!-- la photo de la base de données selon l'auteur-->
 </div>
-<?php // si on est connecter on verifie la session prenom pour ajouter au panier 
-if (isset($_SESSION["prenom"]))
+<?php 
+if (isset($_SESSION["prenom"]))//vérifie la variable 
 {
   echo '<form method="POST">';
   echo '<input type="submit" name="btn-ajoutpanier" class="btn btn-success btn-lg" value="Ajouter au panier"></input>';
@@ -48,14 +48,14 @@ if (isset($_SESSION["prenom"]))
   echo '<p class="text-primary">Pour pouvoir réserver ce livre vous devez posséder un compte et vous identifier !</p>';
 }
 
-if(!isset($_SESSION['panier'])){
-// Initialisation du panier
-$_SESSION['panier'] = array();
+if(!isset($_SESSION['panier'])){//vérifie la variable 
+
+$_SESSION['panier'] = array(); //stocke plusieurs valeurs dans une seule variable
 }
 
 // On ajoute les entrées dans le tableau
-if(isset($_POST['btn-ajoutpanier'])){
-array_push($_SESSION['panier'], $enregistrement->titre);  
+if(isset($_POST['btn-ajoutpanier'])){//vérifie la variable 
+array_push($_SESSION['panier'], $enregistrement->titre);//insère plusieurs éléments à la fin d'un tableau.
 echo "Livre ajouté à votre panier :)";
 }
 ?>

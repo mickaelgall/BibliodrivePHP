@@ -15,16 +15,16 @@ if (!isset($_SESSION["mel"])) { //verification si la variable est définie
         <?php
     } else {
         require_once 'connexion.php';
-        $mel = $_POST['mel']; // verifie les informations
+        $mel = $_POST['mel']; 
         $motdepasse = $_POST['motdepasse'];
-// prépare l'instruction.
+
         $stmt = $connexion->prepare("SELECT * FROM utilisateur WHERE mel=:mel AND motdepasse=:motdepasse");
-        $stmt->bindValue(":mel", $mel); //lie mel au php
+        $stmt->bindValue(":mel", $mel); 
         $stmt->bindValue(":motdepasse", $motdepasse); 
-        $stmt->setFetchMode(PDO::FETCH_OBJ); //verifie les infos de la base de données
+        $stmt->setFetchMode(PDO::FETCH_OBJ);
         $stmt->execute();
-        $enregistrement = $stmt->fetch(); //manipule la requete
-//récupere les information
+        $enregistrement = $stmt->fetch(); 
+
         if ($enregistrement) { 
             $_SESSION["mel"] = $mel;
             $_SESSION["prenom"] = $enregistrement->prenom;

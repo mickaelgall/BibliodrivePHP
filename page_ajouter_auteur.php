@@ -28,7 +28,7 @@ ob_start(); // Cette fonction active la mise en mémoire tampon de la sortie jus
   <!-- début haut droit-->
   <div class="col-sm-3">
   <?php 
-    include 'image.php'; 
+    include 'image_admin.php';
     ?>
 </div>
   </div>

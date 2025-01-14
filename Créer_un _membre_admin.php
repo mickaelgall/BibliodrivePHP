@@ -14,7 +14,7 @@
         <?php
         require_once 'connexion.php'; // Inclure le fichier de connexion à la base de données
 
-        if (isset($_POST['bouton'])) {
+        if (isset($_POST['bouton'])) {//vérifie la variable 
             $mel = $_POST['mel'];
             $motdepasse = $_POST['motdepasse'];
             $nom = $_POST['nom'];
@@ -42,7 +42,7 @@
                         echo "<div class='alert alert-success' id='successMessage'>Membre créé avec succès !</div>";
                         header("Refresh:3");
                     } else {
-                        $erreurs = $stmt->errorInfo(); // A CHANGER
+                        $erreurs = $stmt->errorInfo(); 
                         echo "<div class='alert alert-danger'>Erreur lors de la création du membre : " . $erreurs[2] . "</div>";
                     }
                 } catch (PDOException $e) { // traite les erreurs
