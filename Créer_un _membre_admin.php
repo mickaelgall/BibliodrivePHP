@@ -24,6 +24,7 @@
             $codepostal = $_POST['codepostal'];
             $profil = $_POST['profil'];
 
+            // si tout ces variables axiste on rentre dans la boucle
             if ($mel && $motdepasse && $nom && $prenom && $adresse && $ville && $codepostal && $profil) {
                 // Préparer la requête d'insertion
                 $stmt = $connexion->prepare("INSERT INTO utilisateur (mel, motdepasse, nom, prenom, adresse, ville, codepostal, profil) VALUES (:mel, :motdepasse, :nom, :prenom, :adresse, :ville, :codepostal, :profil)");
